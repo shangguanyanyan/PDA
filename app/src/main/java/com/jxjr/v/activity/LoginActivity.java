@@ -53,6 +53,7 @@ import com.jxjr.utility.StringUtils;
 import com.jxjr.utility.TxtReader;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 
 
 public class LoginActivity extends Activity implements OnClickListener,
@@ -111,6 +112,7 @@ public class LoginActivity extends Activity implements OnClickListener,
 
     private void initWidget() {
         setContentView(R.layout.activity_login);
+        ButterKnife.bind(this);
 
         if (GI.isLOGIN == true) {
             Intent intent = new Intent(this, IndexActivity.class);
