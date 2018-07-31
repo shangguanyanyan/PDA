@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- activity_cprk_scan.xml 产品入库单明细扫描 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+<LinearLayout
+    android:id="@+id/etydetail_bodylinear"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:paddingTop="@dimen/number_scan_页上边距" 
+    android:orientation="vertical">
+    
+<include
+    style="@style/AppTheme"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    layout="@layout/frame_entry_topbar1" />
+
+	    <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:paddingLeft="5dp" >
+			<requestFocus></requestFocus>
+	        <TextView
+	            android:id="@+id/TextView03"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="T"
+	            android:visibility="gone" />
+	    </LinearLayout>
+
+	    <ScrollView
+	        android:id="@+id/scrollView1"
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+	        android:layout_marginTop="10px" >
+
+	       <LinearLayout
+	            android:layout_width="match_parent"
+	            android:layout_height="match_parent"
+	            android:orientation="vertical" >
+	            
+	            <LinearLayout
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:paddingTop="5dp" >
+
+	                <TextView
+	                    android:id="@+id/entry"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:text="扫描区域:"
+	                    android:textAppearance="?android:attr/textAppearanceMedium" />  
+
+		            <com.jxjr.v.view.MEditText
+	                    android:id="@+id/scan_scanarea"
+	                    android:layout_width="match_parent"
+	                    android:layout_height="wrap_content"
+	                    android:layout_weight="1"
+	                    android:background="@drawable/shap_edittext_selector"
+	                    android:hint="扫描区域"
+	                    android:imeOptions="actionSearch"
+	                    android:inputType="text"
+	                    android:minHeight="20dp"
+	                    android:selectAllOnFocus="true"
+	                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+	            </LinearLayout>
+	            
+	            <LinearLayout
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:paddingTop="0dp" >
+
+	                <TextView
+	                    android:id="@+id/scan"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:text="派工条码:"
+	                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+	                <TextView
+	                    android:id="@+id/scan_Tm"
+	                    android:layout_width="match_parent"
+	                    android:layout_height="wrap_content"
+	                    android:layout_weight="1"
+	                    android:background="@drawable/shap_edittext_selector"
+	                    android:enabled="false"
+	                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+	            </LinearLayout>
+	            
+	            <LinearLayout
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:paddingTop="0dp" >
+
+	                <TextView
+	                    android:id="@+id/scan"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:text="生产订单号:"
+	                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+	                <TextView
+	                    android:id="@+id/scan_ScddNo"
+	                    android:layout_width="match_parent"
+	                    android:layout_height="wrap_content"
+	                    android:layout_weight="1"
+	                    android:background="@drawable/shap_edittext_selector"
+	                    android:enabled="false"
+	                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+	            </LinearLayout>
+	            
+	            <LinearLayout
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:paddingTop="0dp" >
+
+	                <TextView
+	                    android:id="@+id/scan"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:text="生产订单行号:"
+	                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+	                <TextView
+	                    android:id="@+id/scan_ScddSeq"
+	                    android:layout_width="match_parent"
+	                    android:layout_height="wrap_content"
+	                    android:layout_weight="1"
+	                    android:background="@drawable/shap_edittext_selector"
+	                    android:enabled="false"
+	                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+	            </LinearLayout>
+	            
+	           <LinearLayout
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:paddingTop="0dp" >
+
+	                <TextView
+	                    android:id="@+id/entry"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:text="物料编码:"
+	                    android:textAppearance="?android:attr/textAppearanceMedium" />   
+
+		            <TextView
+	                android:id="@+id/scan_MaterialNumber"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_weight="1"
+	                android:background="@drawable/shap_edittext_selector"
+	                android:enabled="false"
+	                android:clickable="true"
+	                android:onClick="showDatePicker"
+	                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+	            </LinearLayout>
+
+	            <LinearLayout
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:paddingTop="0dp" >
+
+	                <TextView
+	                    android:id="@+id/scan"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:text="物料名称:"
+	                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+	                <TextView
+	                    android:id="@+id/scan_MaterialName"
+	                    android:layout_width="match_parent"
+	                    android:layout_height="wrap_content"
+	                    android:layout_weight="1"
+	                    android:background="@drawable/shap_edittext_selector"
+	                    android:enabled="false"
+	                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+	            </LinearLayout>
+
+	            <LinearLayout
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:paddingTop="0dp" >
+
+	                <TextView
+	                    android:id="@+id/scan"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:text="规格型号:"
+	                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+	                <TextView
+	                    android:id="@+id/scan_MaterialMode"
+	                    android:layout_width="match_parent"
+	                    android:layout_height="wrap_content"
+	                    android:layout_weight="1"
+	                    android:background="@drawable/shap_edittext_selector"
+	                    android:inputType="text"
+	                    android:enabled="false"
+	                    android:focusable="false"
+	                	android:focusableInTouchMode="false"
+	                    android:textAppearance="?android:attr/textAppearanceMedium" />
+	            </LinearLayout>
+
+	            <LinearLayout
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:paddingTop="0dp">
+
+	                <TextView
+	                    android:id="@+id/scan"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:text="生产批号:"
+	                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+	                <EditText
+	                    android:id="@+id/scan_lot"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:layout_weight="1"
+	                    android:background="@drawable/shap_edittext_selector"
+	                    android:textAppearance="?android:attr/textAppearanceMedium" />
+	            </LinearLayout>
+
+
+	            <LinearLayout
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:paddingTop="0dp" >
+
+	                <TextView
+	                    android:id="@+id/scan"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:text="入库数量:"
+	                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+	                <EditText
+	                    android:id="@+id/scan_Qty"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:layout_weight="1"
+	                    android:background="@drawable/shap_edittext_selector"
+	                    android:inputType="numberDecimal"
+	                    android:selectAllOnFocus="true"
+	                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+	            </LinearLayout>
+
+	            <LinearLayout
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:paddingTop="0dp" >
+
+	                <TextView
+	                    android:id="@+id/scan"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:text="仓库名称:"
+	                    android:textAppearance="?android:attr/textAppearanceMedium" />
+		            		            
+	               <TextView
+	                android:id="@+id/scan_StockName"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_weight="1"
+	                android:background="@drawable/shap_edittext_selector"
+	                android:enabled="false"
+	                android:clickable="true"
+	                android:onClick="showDatePicker"
+	                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+	            </LinearLayout>
+
+	            <LinearLayout
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:paddingTop="0dp" >
+
+	                <TextView
+	                    android:id="@+id/scan"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:text="仓位名称:"
+	                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                    <TextView
+	                android:id="@+id/scan_SpName"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_weight="1"
+	                android:background="@drawable/shap_edittext_selector"
+	                android:enabled="false"
+	                android:clickable="true"
+	                android:onClick="showDatePicker"
+	                android:textAppearance="?android:attr/textAppearanceMedium" />
+	            </LinearLayout>
+	        </LinearLayout>
+
+	    </ScrollView>
+
+    </LinearLayout>
+
+</LinearLayout>

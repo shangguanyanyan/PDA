@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- entryitem_cprk.xml 产品入库单 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+  <LinearLayout
+	    android:id="@+id/entryitem_Surface"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="vertical" >
+
+	    
+        <LinearLayout
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content" >
+
+			<TextView
+			    android:id="@+id/entryitem_0"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:tag="title"
+			    android:text="派工单条码:"
+			    android:textAppearance="?android:attr/textAppearanceMedium" />
+			
+			<TextView
+			    android:id="@+id/entryitem_A0"
+			    android:layout_width="match_parent"
+			    android:layout_height="wrap_content"
+			    android:layout_weight="0.5"
+			    android:tag="data"
+			    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+		</LinearLayout>   
+		
+        <LinearLayout
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content" >
+
+			<TextView
+			    android:id="@+id/entryitem_1"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:tag="title"
+			    android:text="生产订单号:"
+			    android:textAppearance="?android:attr/textAppearanceMedium" />
+			
+			<TextView
+			    android:id="@+id/entryitem_A1"
+			    android:layout_width="match_parent"
+			    android:layout_height="wrap_content"
+			    android:layout_weight="0.5"
+			    android:tag="data"
+			    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+		</LinearLayout>
+		
+        <LinearLayout
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content" >
+
+			<TextView
+			    android:id="@+id/entryitem_2"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:tag="title"
+			    android:text="生产订单行号:"
+			    android:textAppearance="?android:attr/textAppearanceMedium" />
+			
+			<TextView
+			    android:id="@+id/entryitem_A2"
+			    android:layout_width="match_parent"
+			    android:layout_height="wrap_content"
+			    android:layout_weight="0.5"
+			    android:tag="data"
+			    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+		</LinearLayout>
+      
+		<LinearLayout
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content" >
+
+		    <TextView
+		        android:id="@+id/entryitem_3"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:tag="title"
+		        android:text="物料编码:"
+		        android:textAppearance="?android:attr/textAppearanceMedium" />
+		    
+		    <TextView
+		        android:id="@+id/entryitem_A3"
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:tag="data"
+		        android:text="Number9989"
+		        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+		</LinearLayout>
+		
+		
+		<LinearLayout
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content" >
+
+			<TextView
+			    android:id="@+id/entryitem_4"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:tag="title"
+			    android:text="物料名称:"
+			    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+			<TextView
+			    android:id="@+id/entryitem_A4"
+			    android:layout_width="match_parent"
+			    android:layout_height="wrap_content"
+			    android:tag="data"
+			    android:text="二氧化硅"
+			    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+		</LinearLayout>
+
+		<LinearLayout
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content" >
+
+			<TextView
+			    android:id="@+id/entryitem_5"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:tag="title"
+			    android:text="物料规格:"
+			    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+			<TextView
+			    android:id="@+id/entryitem_A5"
+			    android:layout_width="150dp"
+			    android:layout_height="wrap_content"
+			    android:tag="data"
+			    android:text="30×20kg"
+			    android:textAppearance="?android:attr/textAppearanceMedium" />
+		</LinearLayout>
+
+		<LinearLayout
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content" >
+			
+			<TextView
+			    android:id="@+id/entryitem_6"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:tag="title"
+			    android:text="批号:"
+			    android:textAppearance="?android:attr/textAppearanceMedium" />
+			<TextView
+			    android:id="@+id/entryitem_A6"
+			    android:layout_width="match_parent"
+			    android:layout_height="wrap_content"
+			    android:tag="data"
+			    android:textAppearance="?android:attr/textAppearanceMedium" />
+			
+		</LinearLayout>
+
+
+	   <LinearLayout
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content" >
+
+			<TextView
+			    android:id="@+id/entryitem_7"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:tag="title"
+			    android:text="数量:"
+			    android:textAppearance="?android:attr/textAppearanceMedium" />
+			
+			<TextView
+			    android:id="@+id/entryitem_A7"
+			    android:layout_width="match_parent"
+			    android:layout_height="wrap_content"
+			    android:layout_weight="0.5"
+			    android:tag="data"
+			    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+		</LinearLayout>
+		
+		<LinearLayout
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content" >
+
+			<TextView
+			    android:id="@+id/entryitem_8"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:tag="title"
+			    android:text="仓库:"
+			    android:textAppearance="?android:attr/textAppearanceMedium" />
+			
+			<TextView
+			    android:id="@+id/entryitem_A8"
+			    android:layout_width="match_parent"
+			    android:layout_height="wrap_content"
+			    android:layout_weight="0.5"
+			    android:tag="data"
+			    android:textAppearance="?android:attr/textAppearanceMedium" />
+			
+			<TextView
+			    android:id="@+id/entryitem_9"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:tag="title"
+			    android:text="仓位:"
+			    android:textAppearance="?android:attr/textAppearanceMedium" />
+			
+			<TextView
+			    android:id="@+id/entryitem_A9"
+			    android:layout_width="match_parent"
+			    android:layout_height="wrap_content"
+			    android:layout_weight="0.5"
+			    android:tag="data"
+			    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+		</LinearLayout>
+		
+		
+	</LinearLayout>
+
+</LinearLayout>

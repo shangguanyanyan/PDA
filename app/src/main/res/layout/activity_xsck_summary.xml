@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- activity_xsck_summary.xml 销售出库单汇总 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <ListView
+        android:id="@+id/summary_listview"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="7dp"
+        android:layout_marginRight="2dp"
+        android:choiceMode="singleChoice"
+        android:footerDividersEnabled="true"
+        android:headerDividersEnabled="true" >
+
+    </ListView>
+    
+</LinearLayout>
+

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- activity_cprk_hd.xml  产品入库单 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+	<include layout="@layout/frame_head_topbar1" />
+
+	<ScrollView
+	    android:id="@+id/scrollView1"
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:layout_marginTop="10px" >
+
+	   <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="vertical"
+	        android:paddingLeft="5dp"
+	        android:paddingRight="5dp" >
+			<requestFocus></requestFocus>
+	        <LinearLayout
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:paddingTop="5dp" >
+	            
+	            <TextView
+	                android:id="@+id/headText_单据编号"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:paddingLeft="2dp"
+	                android:text="单据编号:"
+	                android:textAppearance="?android:attr/textAppearanceMedium" />
+	
+	            <EditText
+	                android:id="@+id/head_editText_单据编号"
+	                style="@drawable/shap_edittext_selector"
+	                android:layout_width="0dip"
+	                android:layout_height="wrap_content"
+	                android:layout_weight="1"
+	                android:background="@drawable/shap_edittext_selector"
+	                android:enabled="false"
+	                android:focusable="false"
+	                android:focusableInTouchMode="false"
+	                android:gravity="center_vertical"
+	                android:inputType="text"
+	                android:textAppearance="?android:attr/textAppearanceMedium" />
+	                
+	        </LinearLayout>	        
+
+	        
+	        <LinearLayout
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:paddingTop="0dp" >
+	            
+	            <TextView
+	                android:id="@+id/headText_单据日期"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:paddingLeft="2dp"
+	                android:text="单据日期:"
+	                android:textAppearance="?android:attr/textAppearanceMedium" />
+	               
+	            <TextView
+	                android:id="@+id/head_editText_单据日期"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_weight="1"
+	                android:background="@drawable/shap_edittext_selector"
+	                android:clickable="true"
+	                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+	        </LinearLayout>
+ 
+	             
+	        <LinearLayout
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:paddingTop="0dp" >
+	            
+	            <TextView
+	                android:id="@+id/headText_部门"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:paddingLeft="2dp"
+	                android:text="部       门:"
+	                android:textAppearance="?android:attr/textAppearanceMedium" />
+	            
+	            <EditText
+	                android:id="@+id/head_editText_部门"
+	                style="@drawable/shap_edittext_selector"
+	                android:layout_width="0dip"
+	                android:layout_height="wrap_content"
+	                android:layout_weight="1"
+	                android:background="@drawable/shap_edittext_selector"
+	                android:enabled="false"
+	                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+	        </LinearLayout>
+	        
+        
+	        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="0dp" >
+
+            <TextView
+                android:id="@+id/entry0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="合计信息:"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <TextView
+                android:id="@+id/head_editText_合计信息"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/shap_edittext_selector"
+                android:enabled="false"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="0dp" >
+
+            <TextView
+                android:id="@+id/entryitem_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="操  作  员:"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <TextView
+                android:id="@+id/head_editText_操作员"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/shap_edittext_selector"
+                android:enabled="false"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="0dp" >
+
+            <TextView
+                android:id="@+id/entry1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="操作日期:"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <TextView
+                android:id="@+id/head_editText_操作日期"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/shap_edittext_selector"
+                android:enabled="false"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+        </LinearLayout>
+	        
+	    </LinearLayout>
+	</ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+ frame_entry_topbar1.xml
+ -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+ <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:focusable="true"
+    android:focusableInTouchMode="true" >
+
+    <Button
+        android:id="@+id/yg_btn_alter"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/button_custom_selector"
+        android:text="修改"
+        android:textColor="@drawable/button_text"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/yg_btn_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_alignBaseline="@+id/yg_btn_alter"
+        android:layout_alignBottom="@+id/yg_btn_alter"
+        android:layout_toLeftOf="@+id/yg_btn_alter"
+        android:background="@drawable/button_custom_selector"
+        android:text="@string/frame_删除"
+        android:textColor="@drawable/button_alert_text"
+        android:textStyle="bold"/>
+
+    <Button
+        android:id="@+id/yg_btn_new"
+        android:layout_width="wrap_content"
+     	android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/button_custom_selector"
+        android:text="@string/frame_new"
+        android:textColor="@drawable/button_text"
+        android:textStyle="bold" />
+
+</RelativeLayout>
+    
+</LinearLayout>

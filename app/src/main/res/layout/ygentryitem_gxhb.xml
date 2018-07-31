@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ygentryitem_gxhb.xml  工序汇报 列表项目 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+	<LinearLayout
+	    android:id="@+id/ygitem_Surface"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="vertical" >
+
+		<LinearLayout
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content" >
+
+		    <TextView
+		        android:id="@+id/ygitem_0"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:tag="title"
+		        android:text="员工姓名:"
+		        android:textAppearance="?android:attr/textAppearanceLarge" />
+		    
+		    <TextView
+		        android:id="@+id/ygitem_A0"
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:tag="data"
+		        android:text=""
+		        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+		</LinearLayout>
+
+		<LinearLayout
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content" >
+
+			<TextView
+			    android:id="@+id/ygitem_1"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:tag="title"
+			    android:text="员工系数:"
+			    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+			<TextView
+	                    android:id="@+id/ygitem_A1"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:layout_weight="1"
+	                    android:tag="data"
+			            android:text=""
+	                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+
+		</LinearLayout>
+	
+		
+	</LinearLayout>
+
+</LinearLayout>

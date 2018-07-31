@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ygentryitem_gxhb_update.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    
+    <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:focusable="true"
+    android:focusableInTouchMode="true" >
+
+        <TextView
+            android:id="@+id/searchdocument_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginBottom="2dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="2dp"
+            android:textAppearance="?android:attr/textAppearanceMediumInverse"
+            android:textColor="#FFFFFF" />
+        
+    
+    </RelativeLayout>
+    
+   <LinearLayout
+        android:id="@+id/etydetail_bodylinear"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/number_scan_页上边距" >    
+
+      <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/number_scan_行距离" >
+
+            <TextView
+                android:id="@+id/entry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="员    工:"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <TextView
+                android:id="@+id/searcher_yg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_search_category_default"
+                android:clickable="true"
+                android:textAppearance="?android:attr/textAppearanceLarge"/>
+            
+            <EditText
+	                    android:id="@+id/edit_yg"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:layout_weight="1"
+	                    android:background="@drawable/shap_edittext_selector"
+	                    android:inputType="text"
+	                    android:textAppearance="?android:attr/textAppearanceLarge" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp" >
+
+            <TextView
+                android:id="@+id/entry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="员工系数:"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <EditText
+	                android:id="@+id/edit_ygxs"
+	                style="@drawable/shap_edittext_selector"
+	                android:layout_width="0dip"
+	                android:layout_height="wrap_content"
+	                android:layout_weight="1"
+	                android:background="@drawable/shap_edittext_selector"
+	                android:gravity="center_vertical"
+	                android:imeOptions="actionNext"
+	                android:inputType="text"
+	                android:selectAllOnFocus="true"
+	                android:textAppearance="?android:attr/textAppearanceLarge" />
+        </LinearLayout>     
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp" >
+
+            <Button
+        android:id="@+id/scan_btn_confirm"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/button_custom_selector"
+        android:text="确认"
+        android:textColor="@drawable/button_text"
+        android:textStyle="bold" />
+        </LinearLayout>  
+        
+    </LinearLayout>
+
+</LinearLayout>

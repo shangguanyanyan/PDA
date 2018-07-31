@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- activity_search_barcode.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/searchActivity_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#000000"
+        android:paddingBottom="2dp" >
+
+        <TextView
+            android:id="@+id/searchdocument_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginBottom="2dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="2dp"
+            android:textAppearance="?android:attr/textAppearanceMediumInverse"
+            android:textColor="#FFFFFF" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_condition"
+        android:layout_width="match_parent"        
+        android:layout_height="wrap_content" 
+        android:layout_marginTop="3dp" >
+	    <Button
+	        android:id="@+id/search_btn_back"
+	        android:layout_width="40dp"
+	        android:layout_height="40dp"
+	        android:layout_marginLeft="5dp"
+	        android:background="@drawable/button_custom_selector"
+	        android:text="@string/frame_返回"
+	        android:textColor="@drawable/button_text"
+	        android:textStyle="bold" />
+        
+        <EditText
+            android:id="@+id/search_condition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_weight="0.8"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            android:nextFocusDown="@+id/search_condition" />
+
+        
+	    <Button
+	        android:id="@+id/search_btn_search"
+	        android:layout_width="wrap_content"
+	        android:layout_height="40dp"
+	        android:background="@drawable/button_custom_selector"
+	        android:text="@string/frame_搜索"
+	        android:textColor="@drawable/button_text"
+            android:layout_marginRight="5dp"
+	        android:textStyle="bold" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/seachview_listview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </ListView>
+
+</LinearLayout>

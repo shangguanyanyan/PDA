@@ -1,0 +1,534 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- activity_tab_barcode.xml  条码区域-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+<include
+    style="@style/AppTheme"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    layout="@layout/frame_entry_topbar1" />
+    
+	<ScrollView
+	    android:id="@+id/scrollView1"
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:layout_marginTop="10px" >
+	    
+	   <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="vertical"
+	        android:paddingLeft="5dp"
+	        android:paddingRight="5dp" >
+	        <LinearLayout
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:paddingTop="5dp" >
+	            
+	            <TextView
+	                android:id="@+id/headText_条码"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:paddingLeft="2dp"
+	                android:text="条        码:"
+	                android:textAppearance="?android:attr/textAppearanceMedium" />
+	
+	            <com.jxjr.v.view.MEditText
+	                    android:id="@+id/scan_ScanArea"
+	                    android:layout_width="match_parent"
+	                    android:layout_height="wrap_content"
+	                    android:layout_weight="1"
+	                    android:background="@drawable/shap_edittext_selector"
+	                    android:imeOptions="actionSearch"
+	                    android:inputType="text"
+	                    android:minHeight="20dp"
+	                    android:selectAllOnFocus="true"
+	                    android:textAppearance="?android:attr/textAppearanceMedium" />
+	                
+	        </LinearLayout>
+	        
+	        <LinearLayout
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:paddingTop="0dp" >
+	            
+	            <TextView
+	                android:id="@+id/headText_产品代码"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:paddingLeft="2dp"
+	                android:text="产品代码:"
+	                android:textAppearance="?android:attr/textAppearanceMedium" />
+	               
+	            <TextView
+		                android:id="@+id/searcher_产品代码"
+		                android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+		                android:layout_gravity="center_horizontal"
+		                android:background="@drawable/ic_search_category_default"
+		                android:clickable="true"
+		                android:textAppearance="?android:attr/textAppearanceMedium" 
+		                android:visibility="gone"/>
+		            
+	                <com.jxjr.v.view.MEditText
+	                    android:id="@+id/scan_产品代码"
+	                    android:layout_width="match_parent"
+	                    android:layout_height="wrap_content"
+	                    android:layout_weight="1"
+	                    android:background="@drawable/shap_edittext_selector"
+	                    android:imeOptions="actionSearch"
+	                    android:inputType="text"
+	                    android:enabled="false"
+	                    android:focusable="false"
+	                	android:focusableInTouchMode="false"
+	                    android:selectAllOnFocus="true"
+	                    android:minHeight="20dp"
+	                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+	        </LinearLayout> 
+	        
+	        <LinearLayout
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:paddingTop="0dp" >
+	            
+	            <TextView
+	                android:id="@+id/headText_产品名称"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:paddingLeft="2dp"
+	                android:text="产品名称:"
+	                android:textAppearance="?android:attr/textAppearanceMedium" />
+	               
+	            <TextView
+	                android:id="@+id/head_editText_产品名称"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_weight="1"
+	                android:background="@drawable/shap_edittext_selector"
+	                android:enabled="false"
+	                android:clickable="true"
+	                android:onClick="showDatePicker"
+	                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+	        </LinearLayout> 
+	        
+	        <LinearLayout
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:paddingTop="0dp" >
+	            
+	            <TextView
+	                android:id="@+id/headText_规格型号"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:paddingLeft="2dp"
+	                android:text="规格型号:"
+	                android:textAppearance="?android:attr/textAppearanceMedium" />
+	               
+	            <TextView
+	                android:id="@+id/head_editText_规格型号"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_weight="1"
+	                android:background="@drawable/shap_edittext_selector"
+	                android:enabled="false"
+	                android:clickable="true"
+	                android:onClick="showDatePicker"
+	                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+	        </LinearLayout> 
+	    
+	        <LinearLayout
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:paddingTop="0dp" >
+	            
+	            <TextView
+	                android:id="@+id/headText_工序"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:paddingLeft="2dp"
+	                android:text="工        序:"
+	                android:textAppearance="?android:attr/textAppearanceMedium" />
+	               
+	            <TextView
+	                android:id="@+id/head_editText_工序"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_weight="1"
+	                android:background="@drawable/shap_edittext_selector"
+	                android:enabled="false"
+	                android:clickable="true"
+	                android:textAppearance="?android:attr/textAppearanceMedium" />
+	        </LinearLayout> 
+	        	        
+	        
+	        <LinearLayout
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:paddingTop="0dp" >
+	            
+	            <TextView
+	                android:id="@+id/headText_合格数量"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:paddingLeft="2dp"
+	                android:text="合格数量:"
+	                android:textAppearance="?android:attr/textAppearanceMedium" />
+	            
+	            <EditText
+	                android:id="@+id/head_editText_合格数量"
+	                style="@drawable/shap_edittext_selector"
+	                android:layout_width="0dip"
+	                android:layout_height="wrap_content"
+	                android:layout_weight="1"
+	                android:background="@drawable/shap_edittext_selector"
+	                android:gravity="center_vertical"
+	                android:imeOptions="actionNext"
+	                android:inputType="text"
+	                android:selectAllOnFocus="true"
+	                android:textAppearance="?android:attr/textAppearanceMedium" /> 
+	        </LinearLayout>
+
+	        
+	        <LinearLayout
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:paddingTop="0dp" >
+	            
+	            <TextView
+	                android:id="@+id/headText_料返数量"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:paddingLeft="2dp"
+	                android:text="料返数量:"
+	                android:textAppearance="?android:attr/textAppearanceMedium" />
+	             <EditText
+	                    android:id="@+id/head_editText_料返数量"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:layout_weight="1"
+	                    android:background="@drawable/shap_edittext_selector"
+	                    android:inputType="text"
+	                    android:text="0"
+	                    android:selectAllOnFocus="true"
+	                    android:textAppearance="?android:attr/textAppearanceMedium" />
+	            
+	        </LinearLayout>
+			
+	       <LinearLayout
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:paddingTop="0dp" >
+	            
+	            <TextView
+	                android:id="@+id/headText_工返数量"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:paddingLeft="2dp"
+	                android:text="工返数量:"
+	                android:textAppearance="?android:attr/textAppearanceMedium" />
+	            
+	            <EditText
+	                    android:id="@+id/head_editText_工返数量"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:layout_weight="1"
+	                    android:background="@drawable/shap_edittext_selector"
+	                    android:inputType="text"
+	                    android:text="0"
+	                    android:selectAllOnFocus="true"
+	                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+	            
+	        </LinearLayout>
+
+	        
+	        <LinearLayout
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:paddingTop="0dp" >
+	            
+	            <TextView
+	                android:id="@+id/headText_料废数量"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:paddingLeft="2dp"
+	                android:text="料废数量:"
+	                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+	            <EditText
+	                    android:id="@+id/head_editText_料废数量"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:layout_weight="1"
+	                    android:background="@drawable/shap_edittext_selector"
+	                    android:inputType="text"
+	                    android:text="0"
+	                    android:selectAllOnFocus="true"
+	                    android:textAppearance="?android:attr/textAppearanceMedium" />
+	        </LinearLayout>
+	        
+	        <LinearLayout
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:paddingTop="0dp" >
+	            
+	            <TextView
+	                android:id="@+id/headText_工废数量"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:paddingLeft="2dp"
+	                android:text="工废数量:"
+	                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+	           <EditText
+	                    android:id="@+id/head_editText_工废数量"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:layout_weight="1"
+	                    android:background="@drawable/shap_edittext_selector"
+	                    android:inputType="text"
+	                    android:text="0"
+	                    android:selectAllOnFocus="true"
+	                    android:textAppearance="?android:attr/textAppearanceMedium" />
+	        </LinearLayout>
+	        
+	        <LinearLayout
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:paddingTop="0dp" >
+	            
+	            <TextView
+	                android:id="@+id/headText_缺陷原因"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:paddingLeft="2dp"
+	                android:text="缺陷原因:"
+	                android:textAppearance="?android:attr/textAppearanceMedium" />
+	           	            
+	            <EditText
+	                android:id="@+id/head_editText_缺陷原因"
+	                style="@drawable/shap_edittext_selector"
+	                android:layout_width="0dip"
+	                android:layout_height="wrap_content"
+	                android:layout_weight="1"
+	                android:background="@drawable/shap_edittext_selector"
+	                android:clickable="true"
+	                android:gravity="center_vertical"
+	                android:inputType="text"
+	                android:focusable="false"
+	                android:focusableInTouchMode="false"
+	                android:textAppearance="?android:attr/textAppearanceMedium" />
+	        </LinearLayout>
+	           <LinearLayout
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:paddingTop="0dp" >
+	            
+	            <TextView
+	                android:id="@+id/headText_抽样数"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:paddingLeft="2dp"
+	                android:text="抽样数:"
+	                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+	            <EditText
+	                    android:id="@+id/head_editText_抽样数"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:layout_weight="1"
+	                    android:background="@drawable/shap_edittext_selector"
+	                    android:inputType="text"
+	                    android:text="0"
+	                    android:selectAllOnFocus="true"
+	                    android:textAppearance="?android:attr/textAppearanceMedium" />
+	        </LinearLayout>
+	        <LinearLayout
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:paddingTop="0dp" >
+	            
+	            <TextView
+	                android:id="@+id/headText_是否统计工时"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:paddingLeft="2dp"
+	                android:text="是否统计工时:"
+	                android:textAppearance="?android:attr/textAppearanceMedium" />
+	          
+	            <TextView
+	                android:id="@+id/empty"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:text="                 "
+	                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+	            <CheckBox
+	                android:id="@+id/head_checkBox_是否统计工时"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_weight="1"
+	                android:text="" />
+
+	        </LinearLayout> 
+	        
+	        <LinearLayout
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:paddingTop="0dp" >
+	            
+	            <TextView
+	                android:id="@+id/headText_工时"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:paddingLeft="2dp"
+	                android:text="工      时:"
+	                android:textAppearance="?android:attr/textAppearanceMedium" />
+	               
+	            <EditText
+	                    android:id="@+id/head_editText_工时"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:layout_weight="1"
+	                    android:background="@drawable/shap_edittext_selector"
+	                    android:inputType="numberDecimal"
+	                    android:text="0"
+	                    android:selectAllOnFocus="true"
+	                    android:textAppearance="?android:attr/textAppearanceMedium" />
+	        </LinearLayout> 
+	        
+	       <!--  <LinearLayout
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:paddingTop="0dp" >
+	            
+	            <TextView
+	                android:id="@+id/headText_一次返工数量"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:paddingLeft="2dp"
+	                android:text="一次返工数量:"
+	                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+	            <EditText
+	                    android:id="@+id/head_editText_一次返工数量"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:layout_weight="1"
+	                    android:background="@drawable/shap_edittext_selector"
+	                    android:inputType="numberDecimal"
+	                    android:text="0"
+	                    android:selectAllOnFocus="true"
+	                    android:textAppearance="?android:attr/textAppearanceMedium" />
+	        </LinearLayout>
+	        
+	        <LinearLayout
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:paddingTop="0dp" >
+	            
+	            <TextView
+	                android:id="@+id/headText_二次返工数量"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:paddingLeft="2dp"
+	                android:text="二次返工数量:"
+	                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+	            <EditText
+	                    android:id="@+id/head_editText_二次返工数量"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:layout_weight="1"
+	                    android:background="@drawable/shap_edittext_selector"
+	                    android:inputType="numberDecimal"
+	                    android:text="0"
+	                    android:selectAllOnFocus="true"
+	                    android:textAppearance="?android:attr/textAppearanceMedium" />
+	        </LinearLayout>
+	        
+	        <LinearLayout
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:paddingTop="0dp" >
+	            
+	            <TextView
+	                android:id="@+id/headText_三次返工数量"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:paddingLeft="2dp"
+	                android:text="三次返工数量:"
+	                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+	            <EditText
+	                    android:id="@+id/head_editText_三次返工数量"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:layout_weight="1"
+	                    android:background="@drawable/shap_edittext_selector"
+	                    android:inputType="numberDecimal"
+	                    android:text="0"
+	                    android:selectAllOnFocus="true"
+	                    android:textAppearance="?android:attr/textAppearanceMedium" />
+	        </LinearLayout>
+	        
+	        <LinearLayout
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:paddingTop="0dp" >
+	            
+	            <TextView
+	                android:id="@+id/headText_四次返工数量"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:paddingLeft="2dp"
+	                android:text="四次返工数量:"
+	                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+	            <EditText
+	                    android:id="@+id/head_editText_四次返工数量"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:layout_weight="1"
+	                    android:background="@drawable/shap_edittext_selector"
+	                    android:inputType="numberDecimal"
+	                    android:text="0"
+	                    android:selectAllOnFocus="true"
+	                    android:textAppearance="?android:attr/textAppearanceMedium" />
+	        </LinearLayout> -->
+	        
+	      
+	         <LinearLayout
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:paddingTop="0dp" >
+	            
+	            <TextView
+	                android:id="@+id/headText_抽样不合格数"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:paddingLeft="2dp"
+	                android:text="抽样不合格数:"
+	                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+	            <EditText
+	                    android:id="@+id/head_editText_抽样不合格数"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:layout_weight="1"
+	                    android:background="@drawable/shap_edittext_selector"
+	                    android:inputType="text"
+	                    android:text="0"
+	                    android:selectAllOnFocus="true"
+	                    android:textAppearance="?android:attr/textAppearanceMedium" />
+	        </LinearLayout>
+		</LinearLayout>
+	</ScrollView>
+	
+</LinearLayout>
