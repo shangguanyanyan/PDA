@@ -71,14 +71,14 @@ public class DaoMaster extends AbstractDaoMaster {
     
     /** WARNING: Drops all table on Upgrade! Use only during development. */
     public static class DevOpenHelper extends OpenHelper {
-//    	public DevOpenHelper(Context context, String name, CursorFactory factory) {
-//          super(context, name, factory);
-//      }
+    	public DevOpenHelper(Context context, String name, CursorFactory factory) {
+         super(context, name, factory);
+      }
   		
   	//Me+  **************************************
-  	 public DevOpenHelper(Context context, String name, CursorFactory factory) {
+  /*	 public DevOpenHelper(Context context, String name, CursorFactory factory) {
            super(new CustomPathDatabaseContext(context, getDirPath()), name, factory);
-       }
+       }*/
       /**
        * 获取db文件在sd卡的路径
        * @return

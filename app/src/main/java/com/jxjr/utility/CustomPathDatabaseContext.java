@@ -14,12 +14,12 @@ public class CustomPathDatabaseContext extends ContextWrapper {
 	    
 	    public CustomPathDatabaseContext(Context base, String dirPath) {  
 	           super(base);  
-	           this.mDirPath = dirPath;  
+	           this.mDirPath = dirPath;
 	    }      
 	    @Override  
 	    public  File getDatabasePath(String name)   
 	    {  
-	       File result = new File(mDirPath + File.separator + name);  
+	       File result = new File(mDirPath + File.separator + name);
 
 	       if (!result.getParentFile().exists())  
 	       {  
