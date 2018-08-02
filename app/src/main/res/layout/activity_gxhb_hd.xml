@@ -50,7 +50,7 @@
             android:paddingTop="@dimen/number_scan_行距离" >
 
             <TextView
-                android:id="@+id/entry"
+                android:id="@+id/entry1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="日        期:"
@@ -94,7 +94,7 @@
             android:paddingTop="0dp" >
 
             <TextView
-                android:id="@+id/entry"
+                android:id="@+id/entry2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="车        间:"
@@ -116,7 +116,7 @@
             android:paddingTop="0dp" >
 
             <TextView
-                android:id="@+id/entry"
+                android:id="@+id/entry3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="员工信息:"
@@ -138,7 +138,7 @@
             android:paddingTop="0dp" >
 
             <TextView
-                android:id="@+id/entry"
+                android:id="@+id/entry4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="单据信息:"
@@ -160,7 +160,7 @@
             android:paddingTop="0dp" >
 
             <TextView
-                android:id="@+id/entry"
+                android:id="@+id/entry5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="操  作  员:"
@@ -182,7 +182,7 @@
             android:paddingTop="0dp" >
 
             <TextView
-                android:id="@+id/entry"
+                android:id="@+id/entry6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="操作日期:"

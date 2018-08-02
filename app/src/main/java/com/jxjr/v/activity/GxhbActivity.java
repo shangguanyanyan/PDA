@@ -11,6 +11,7 @@ import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -48,6 +49,7 @@ public class GxhbActivity extends
 	GxhbEntryFrg tab2 = new GxhbEntryFrg();
 	GxhbScanFrg tab3 = new GxhbScanFrg();
 	OffLineCatchFrg tab4 = new OffLineCatchFrg();
+
 
 
 
@@ -113,7 +115,7 @@ public class GxhbActivity extends
 	public void setTab1(GxhbYgFrg tab1) {
 		this.tab1 = tab1;
 	}
-	
+
 	public OffLineCatchFrg getTab4() {
 		return tab4;
 	}
@@ -139,7 +141,8 @@ public class GxhbActivity extends
 	@Override
 	protected void intiData() {
 		// TODO Auto-generated method stub
-		billdocument_title.setText(getString(R.string.menu_gxhb));
+		//billdocument_title.setText(getString(R.string.menu_gxhb));
+		getSupportActionBar().setTitle(R.string.menu_gxhb);
 		entity = new JrGxhbBillDTO();
 		entity.setBill(new JrPdaGxhbbill());
 		entity.setEntrys(new ArrayList<JrPdaGxhbbillentry>());
@@ -148,7 +151,7 @@ public class GxhbActivity extends
 		presenter.setHd_view(tab0);
 
 		presenter.setScan_view(tab3);
-		presenter.refreshingData(id);	
+		presenter.refreshingData(id);
 	}
 
 	private void initWidget() {
@@ -164,7 +167,7 @@ public class GxhbActivity extends
 		mFragments.add(tab2);
 		mFragments.add(tab3);
 		mFragments.add(tab4);
-		
+
 	}
 
 	@Override
@@ -339,8 +342,8 @@ public class GxhbActivity extends
 	}
 
 	// 抽象方法实现
-	
-	
+
+
 	//获得父类扫描得到的条码，进行解析并定位页面
 	public void Distribution(String catchDecode){
 		super.Distribution(catchDecode);
@@ -368,7 +371,7 @@ public class GxhbActivity extends
 							}).create();
 					dialog.show();
 				}
-				
+
 			}catch (Exception e) {
 				// TODO: handle exception
 				Log.e("存入", "存入出错");
@@ -378,9 +381,9 @@ public class GxhbActivity extends
 			mViewPager.setCurrentItem(3,false);
 			this.tab3.decodeMatByCode(catchDecode);
 		}
-		
+
 		Log.d("debug", catchDecode);
 	}
-	
+
 
 }

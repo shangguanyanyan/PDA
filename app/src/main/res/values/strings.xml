@@ -42,4 +42,6 @@
     <string name="soft_update_cancel">取消</string>
     <string name="scan_text">将二维码放入框内, 即可自动扫描</string>
 <string name = "dialog_title">选择操作</string>
+    <string name="btn_tx1">发现</string>
+    <string name="check">离线</string>
 </resources>

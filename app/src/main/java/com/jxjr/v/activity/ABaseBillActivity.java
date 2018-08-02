@@ -20,16 +20,24 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
+
 
 import com.example.copyofhy.MyApplication;
 import com.example.copyofhy.R;
@@ -41,7 +49,9 @@ import com.jxjr.p.ABasePresenter;
 import com.jxjr.utility.AZUIPub;
 import com.jxjr.utility.Constance;
 import com.jxjr.v.fragment.ABaseBillEntryFrg;
+import com.jxjr.v.view.ActionItem;
 import com.jxjr.v.view.MEditText;
+import com.jxjr.v.view.TitlePopup;
 
 
 import java.util.ArrayList;
@@ -54,7 +64,7 @@ import butterknife.OnClick;
 import butterknife.OnEditorAction;
 
 
-public abstract class ABaseBillActivity<E, P extends ABasePresenter> extends FragmentActivity
+public abstract class ABaseBillActivity<E, P extends ABasePresenter> extends AppCompatActivity//FragmentActivity
         implements ABaseBillContract.IfBasebillActivityView, ABaseBillEntryFrg.OnChangeScanIndexListener {
 
     Intent originIntent; // 最原始的Intent
@@ -65,8 +75,8 @@ public abstract class ABaseBillActivity<E, P extends ABasePresenter> extends Fra
     protected FragmentPagerAdapter mAdapter;
     protected List<Fragment> mFragments = new ArrayList<Fragment>();
 
-    @BindView(R.id.billdocument_title)
-    protected TextView billdocument_title;
+   /* @BindView(R.id.billdocument_title)
+    protected TextView billdocument_title;*/
 
     @BindView(R.id.billdocument_scanview)
     protected MEditText mscanView;
@@ -75,8 +85,8 @@ public abstract class ABaseBillActivity<E, P extends ABasePresenter> extends Fra
      * @BindView(R.id.scanbtn) protected Button scanbtn;
      */
 
-    @BindView(R.id.isoffline)
-    protected CheckBox isoffline;
+    /*@BindView(R.id.isoffline)
+    protected CheckBox isoffline;*/
 
     @BindView(R.id.billdocument_viewer_hd)
     protected Button viewer_hd;
@@ -95,8 +105,11 @@ public abstract class ABaseBillActivity<E, P extends ABasePresenter> extends Fra
 
     @BindView(R.id.billdocument_viewpager)
     protected ViewPager mViewPager;
+    @BindView(R.id.toolbar)
+    protected Toolbar toolBar;
 
-    protected PopupWindow popWindow;
+    protected TitlePopup titlePopup;
+
 
     protected ProgressDialog mDownloadDialog;
 
@@ -142,6 +155,7 @@ public abstract class ABaseBillActivity<E, P extends ABasePresenter> extends Fra
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_frame_billdocument);
         ButterKnife.bind(this);
+        setSupportActionBar(toolBar);
         mscanView.setOnTouchListener(AZUIPub.noInputToucher);
         mDownloadDialog = new ProgressDialog(this);
         mDownloadDialog.setCanceledOnTouchOutside(false);
@@ -159,8 +173,7 @@ public abstract class ABaseBillActivity<E, P extends ABasePresenter> extends Fra
         originIntent = getIntent();
         id = originIntent.getIntExtra("id", 0);
         billstatus = originIntent.getIntExtra("billstatus", 0);
-        // billdocument_title.setFocusable(true);
-        // billdocument_title.setFocusableInTouchMode(true);
+
 
         alertDialog = new AlertDialog.Builder(this, AlertDialog.THEME_HOLO_DARK).setPositiveButton("确定", null)
                 .setTitle("警告");
@@ -204,6 +217,8 @@ public abstract class ABaseBillActivity<E, P extends ABasePresenter> extends Fra
      */
     protected void intiPageViewer() {
         addFragments();
+        titlePopup = new TitlePopup(this, ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        initTitleData();
         mAdapter = new FragmentPagerAdapter(getSupportFragmentManager()) {
 
             @Override
@@ -276,7 +291,12 @@ public abstract class ABaseBillActivity<E, P extends ABasePresenter> extends Fra
         });
         viewer_hd.setEnabled(false);
     }
-
+    private void initTitleData(){
+        titlePopup.addAction(new ActionItem(this, "离线列表", R.mipmap.mm_title_btn_compose_normal));
+        titlePopup.addAction(new ActionItem(this, "听筒模式", R.mipmap.mm_title_btn_receiver_normal));
+        titlePopup.addAction(new ActionItem(this, "登录网页", R.mipmap.mm_title_btn_keyboard_normal));
+        titlePopup.addAction(new ActionItem(this, "扫一扫", R.mipmap.mm_title_btn_qrcode_normal));
+    }
     protected abstract void addFragments();
 
 
@@ -288,39 +308,24 @@ public abstract class ABaseBillActivity<E, P extends ABasePresenter> extends Fra
      * (结束)
      */
     protected abstract void intiData();
-
-    /*
-     * 设置PopUpWindow窗口中的布局
-     */
-    protected void showPopupWindow() {
-        View contentView = LayoutInflater.from(ABaseBillActivity.this).inflate(R.layout.popwindow, null);
-        popWindow = new PopupWindow(contentView, LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, true);
-        Bitmap bmp = BitmapFactory.decodeResource(getResources(), R.mipmap.popbackground);
-        Drawable drawable = new BitmapDrawable(getResources(), bmp);
-        popWindow.setBackgroundDrawable(drawable);
-        popWindow.setOutsideTouchable(true);
-        // popWindow.showAsDropDown(tittleBtn);
-        TextView tv1 = (TextView) contentView.findViewById(R.id.pop_scan);
-
-        tv1.setOnClickListener(new OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                // TODO Auto-generated method stub
-                int id = v.getId();
-                switch (id) {
-                    case R.id.pop_scan:
-                        Intent intent = new Intent();
-                        intent.setClass(ABaseBillActivity.this, MipcaActivityCapture.class);
-                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                        startActivityForResult(intent, 1);
-                        popWindow.dismiss();
-                        break;
-                }
-            }
-        });
-
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
     }
+    public boolean onOptionsItemSelected(MenuItem item){
+        int id = item.getItemId();
+
+        switch(id){
+            case R.id.action_discover:
+                titlePopup.show(toolBar);
+
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+
+
 
     // click 事件区域 开始
     @OnClick(R.id.billdocument_viewer_hd)
@@ -371,14 +376,14 @@ public abstract class ABaseBillActivity<E, P extends ABasePresenter> extends Fra
         mViewPager.setCurrentItem(3);
     }
 
-    @OnCheckedChanged(R.id.isoffline)
+   /* @OnCheckedChanged(R.id.isoffline)
     public void onChecked(boolean isChecked) {
         if (isChecked) {
             offline = true;
         } else {
             offline = false;
         }
-    }
+    }*/
 
     /*
      * @OnClick(R.id.scanpic) public void onPopUp() { showPopupWindow(); }

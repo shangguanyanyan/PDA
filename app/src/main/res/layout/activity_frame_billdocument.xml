@@ -9,6 +9,7 @@
     android:orientation="vertical" >
 
     <!--  -->
+    <include layout="@layout/app_bar_main"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -16,7 +17,7 @@
         android:background="#000000"
         android:paddingBottom="2dp" >
 
-        <TextView
+      <!--  <TextView
             android:id="@+id/billdocument_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -26,13 +27,13 @@
             android:layout_marginLeft="5dp"
             android:layout_marginTop="2dp"
             android:textAppearance="?android:attr/textAppearanceMediumInverse"
-            android:textColor="#FFFFFF" />
+            android:textColor="#FFFFFF" />-->
 
         <LinearLayout
             android:id="@+id/conrtolscan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/billdocument_title" >
+             >
 
             <com.jxjr.v.view.MEditText
                 android:id="@+id/billdocument_scanview"
@@ -48,35 +49,9 @@
                 android:selectAllOnFocus="true"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
-          <!--   <ImageButton
-                android:id="@+id/scanpic"
-                android:layout_width="10dp"
-                android:layout_height="30dp"
-                android:layout_weight="0.78"
-                android:background="#000000"
-                android:src="@drawable/addition" /> -->
 
-            <com.karumi.expandableselector.ExpandableSelector
-                android:id="@+id/es_icons"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
-                android:layout_margin="@dimen/expandable_selector_margin"
-                android:background="@drawable/bg_expandable_selector_dark"
-                expandable_selector:animation_duration="@integer/custom_animation_duration"
-                expandable_selector:collapse_interpolator="@android:anim/decelerate_interpolator"
-                expandable_selector:container_interpolator="@android:anim/accelerate_decelerate_interpolator"
-                expandable_selector:expand_interpolator="@android:anim/accelerate_interpolator" >
-            </com.karumi.expandableselector.ExpandableSelector>
 
-            <CheckBox
-                android:id="@+id/isoffline"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toRightOf="@id/es_icons"
-                android:text="离线"
-                android:textColor="#FFFFFF" />
+
         </LinearLayout>
     </RelativeLayout>
 
